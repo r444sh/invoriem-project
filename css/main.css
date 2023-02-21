@@ -1,0 +1,290 @@
+@import "./reset.css";
+@import './fonts/Gilroy/stylesheet.css';
+
+/* font-family: 'Work Sans', sans-serif; */
+/* font-family: 'Gilroy', sans-serif; */
+
+:root {
+    --teal: #114555;
+    --text-color: #1F1F1F;
+}
+body {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1750px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.container-right {
+    padding-left: calc((100% - 1750px) / 2 + 15px);
+}
+
+.none {
+    display: none;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 24px;
+    padding-right: 72px;
+    border: 1px solid var(--teal);
+    border-radius: 2px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--teal);
+
+    transition: color 0.15s ease-in, background-color 0.15s ease-in;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-image: url('./../img/icons/arrow-right-black.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn:hover, .btn:focus {
+    background-color: var(--teal);
+    color: #fff;
+}
+
+.btn:active {
+    top: 1px;
+}
+
+.btn:hover::after {
+    background-image: url('./../img/icons/arrow-right-white.svg');
+}
+
+.btn--big {
+    padding: 14px 32px;
+    padding-right: 80px;
+}
+
+.btn--dark {
+    background-color: var(--teal);
+    color: #fff;
+}
+
+.btn--dark:hover, .btn--dark:focus {
+    background-color: #000;
+}
+
+.btn--dark::after {
+    background-image: url('./../img/icons/arrow-right-white.svg');
+}
+
+/* Header */
+
+.header {
+    min-height: 100vh;
+    background-color: #E1EDF2;
+    background-image: url("./../img/header/header-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.header__top {
+    margin-bottom: 126px;
+    padding: 44px 0;
+}
+
+/* Nav */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    column-gap: 118px;
+}
+
+.link {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--teal);
+}
+
+/* Header content */
+
+.header__content {
+    max-width: 1060px;
+}
+
+.header__title {
+    margin-bottom: 48px;
+    max-width: 734px;
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--teal);
+}
+
+.header__text {
+    margin-bottom: 72px;
+    font-size: 34px;
+    color: var(--text-color);
+}
+
+/* Case Studies */
+
+.case-studies {
+    padding: 184px 0;
+}
+
+.case-studies__title {
+    max-width: 1070px;
+    margin-bottom: 12px;
+}
+
+.case-studies__text {
+    max-width: 1070px;
+    margin-bottom: 100px;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.text {
+    font-size: 28px;
+    line-height: 1.57;
+    color: var(--text-color);
+}
+
+/* Slider */
+
+.slider {
+}
+
+.slider__item {
+
+}
+
+/* Slide */
+
+.slide {
+    position: relative;
+    display: inline-block;
+    padding-left: 80px;
+}
+
+.slide__title {
+    position: absolute;
+    left: 0;
+    bottom: 104px;
+
+    font-size: 140px;
+    font-weight: 800;
+
+    background: linear-gradient(90deg, rgba(17,68,85,1) 80px, rgba(255,255,255,1) 80px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* About */
+
+.about {
+    padding: 144px 0;
+}
+
+.about__title {
+    max-width: 1070px;
+    margin-bottom: 12px;
+}
+
+.about__text {
+    max-width: 1070px;
+    margin-bottom: 78px;
+}
+
+.about__content {
+
+}
+
+/* Video */
+
+.video {
+    position: relative;
+}
+
+.video-overlay::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 68, 85, 0.5);
+}
+
+
+.video__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+.video__picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video__object {
+    width: 100%;
+    vertical-align: top;
+}
+
+/* Footer */
+
+.footer {
+    padding: 162px 0 82px;
+}
+
+.footer a {
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    line-height: 36px;
+    color: rgba(31, 31, 31, 0.7);
+}
+
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__copyright {
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    line-height: 36px;
+    color: rgba(31, 31, 31, 0.7);
+}
+
+.footer__nav {
+    display: flex;
+    column-gap: 104px;
+}
+
+.footer__socials {
+    display: flex;
+    column-gap: 26px;
+}
