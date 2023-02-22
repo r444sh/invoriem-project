@@ -1,16 +1,19 @@
 @import "./reset.css";
 @import './fonts/Gilroy/stylesheet.css';
 
-/* font-family: 'Work Sans', sans-serif; */
-/* font-family: 'Gilroy', sans-serif; */
+html {
+    scroll-behavior: smooth;
+}
 
 :root {
     --teal: #114555;
-    --text-color: #1F1F1F;
+    --text-color: rgba(31, 31, 31, 0.7);
 }
+
 body {
     font-family: 'Gilroy', sans-serif;
     font-weight: 500;
+    color: var(--text-color);
 }
 
 .container {
@@ -20,11 +23,26 @@ body {
 }
 
 .container-right {
+    overflow-x: hidden;
     padding-left: calc((100% - 1750px) / 2 + 15px);
 }
 
+@media (max-width: 1749px) {
+    .container-right {
+        padding-left: 15px;
+    }
+}
+
 .none {
-    display: none;
+    display: none !important;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.no-scroll {
+    overflow-y: hidden;
 }
 
 .btn {
@@ -89,6 +107,7 @@ body {
 /* Header */
 
 .header {
+    position: relative;
     min-height: 100vh;
     background-color: #E1EDF2;
     background-image: url("./../img/header/header-bg.jpg");
@@ -99,6 +118,13 @@ body {
 .header__top {
     margin-bottom: 126px;
     padding: 44px 0;
+}
+
+.header__arrows {
+    position: absolute;
+    bottom: 59px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Nav */
@@ -114,6 +140,10 @@ body {
     column-gap: 118px;
 }
 
+.nav__btn {
+    display: none;
+}
+
 .link {
     font-size: 20px;
     font-weight: 800;
@@ -121,6 +151,10 @@ body {
 }
 
 /* Header content */
+
+.header__content-mobile {
+    display: none;
+}
 
 .header__content {
     max-width: 1060px;
@@ -137,6 +171,7 @@ body {
 .header__text {
     margin-bottom: 72px;
     font-size: 34px;
+    line-height: 1.57;
     color: var(--text-color);
 }
 
@@ -227,6 +262,7 @@ body {
 .video-overlay::after {
     content: "";
     position: absolute;
+    z-index: 8;
     left: 0;
     top: 0;
     width: 100%;
@@ -244,13 +280,17 @@ body {
 }
 
 .video__picture {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
+    z-index: 7;
 }
 
 .video__object {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     width: 100%;
+    height: 100%;
     vertical-align: top;
 }
 
@@ -258,6 +298,11 @@ body {
 
 .footer {
     padding: 162px 0 82px;
+
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    line-height: 36px;
+    color: rgba(31, 31, 31, 0.7);
 }
 
 .footer a {
@@ -272,13 +317,6 @@ body {
     justify-content: space-between;
 }
 
-.footer__copyright {
-    letter-spacing: 0.04em;
-    font-size: 20px;
-    line-height: 36px;
-    color: rgba(31, 31, 31, 0.7);
-}
-
 .footer__nav {
     display: flex;
     column-gap: 104px;
@@ -287,4 +325,106 @@ body {
 .footer__socials {
     display: flex;
     column-gap: 26px;
+}
+
+/* Mobile nav */
+
+.mobile-nav {
+    position: fixed;
+    z-index: 99;
+
+    padding: 44px 15px 32px 24px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 30px;
+
+    background-color: #fff;
+}
+
+.mobile-nav__header {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 66px; */
+}
+
+.mobile-nav__logo {
+    max-width: 109px;
+}
+
+.mobile-nav__btn {
+    margin-right: 1px;
+}
+
+.mobile-list {
+    margin-bottom: 80px;
+    font-size: 40px;
+    color: #1F1F1F;
+    font-weight: 800;
+}
+
+.mobile-list a {
+    color: #1F1F1F;
+}
+
+
+.mobile-contacts {
+    /* margin-bottom: 80px; */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.mobile-contacts a {
+    color:rgba(31, 31, 31, 0.7);
+}
+
+.mobile-contacts__title {
+    margin-bottom: 32px;
+    color: #1F1F1F;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.mobile-contacts__email {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.mobile-contacts__phone {
+    margin-bottom: 16px;
+}
+
+.mobile-contacts__address {
+    font-style: normal;
+}
+
+.mobile-footer  {
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a.mobile-footer__email {
+    display: block;
+    color: rgba(73, 42, 211, 0.7);
+    margin-bottom: 16px;
+}
+
+.mobile-socials {
+    margin-bottom: 32px;
+}
+
+.mobile-socials img {
+    width: 24px;
+}
+
+.mobile-footer__copyright {
+    font-style: 14px;
+    color:rgba(31, 31, 31, 0.7);
 }

@@ -2,9 +2,28 @@
 
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
-        dots: false,
-        margin: 48,
-        loop: true,
+        responsive: {
+           0: {
+            items: 2,
+            margin: 32,
+            dots: false,
+            loop: true,
+           },
+
+           601: {
+            items: 3,
+            margin: 32,
+            dots: false,
+            loop: true,
+           },
+
+           1001: {
+            items: 3,
+            margin: 48,
+            dots: false,
+            loop: true,
+           },
+        }
     });
   });
 
@@ -18,7 +37,7 @@ $(document).ready(function(){
   videoWrapper.addEventListener('click', function () {
 
     if (video.paused) {
-        videoPicture.classList.add('none');
+        videoPicture.classList.add('hidden');
         videoWrapper.classList.remove('video-overlay');
         videoBtn.classList.add('none');
         video.play();
@@ -28,3 +47,19 @@ $(document).ready(function(){
         video.pause();
     }
   })
+
+
+  // Mobile Nav
+  const openNavbtn = document.querySelector('#openMobileNav');
+  const mobileNav = document.querySelector('#mobileNav');
+  const closeNavbtn = document.querySelector('#closeMobileNav');
+
+  openNavbtn.onclick = function () {
+    mobileNav.classList.remove('none');
+    document.body.classList.add('no-scroll');
+  }
+
+  closeNavbtn.onclick = function () {
+    mobileNav.classList.add('none');
+    document.body.classList.remove('no-scroll');
+  }
